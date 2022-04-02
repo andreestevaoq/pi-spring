@@ -1,0 +1,168 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  }
+#banner{
+    width: 100%;
+    
+}
+header{
+    display: inline-block;
+    margin: 0 auto;
+    background-color: lightgray;
+    max-width: 1200px;
+    height: 130px;
+}  
+header img{
+
+    display: flex;
+    justify-content: left;
+    width: 200px;
+    height: 100px;
+}
+
+
+
+
+#principal{
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr;
+    grid-template-rows: auto auto auto;
+    background-color: rgb(248, 222, 182);
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+section #fachada{
+    grid-column: 1/span 2;
+  
+}
+section #txtfachada{
+    grid-column: 3;
+}
+#txtfachada p{
+    margin: 0;
+    align-items: center;
+    font-family: arial;
+    color: rgb(117, 115, 115);
+    text-align: center;
+    
+}
+
+#conteudo_index{
+    position: unset;
+    width: 1200px;
+    margin: 0 auto;
+    
+    background-color: rgb(230, 230, 230);
+
+}
+#conteudo_index video{
+    width: 100%;
+    height: 600px;
+}
+#conteudo_sobrenos{
+    position: unset;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0px 0px 0px 10px;
+    background-color: rgb(230, 230, 230);
+
+}
+#conteudo_sobrenos h2, h3, h6{
+    font-family: arial;
+    color: rgb(59, 59, 59);
+
+}
+#conteudo_sobrenos hr{
+    width: 1170px;
+    justify-content: left;
+}
+
+#conteudo_sobrenos img{
+    border-radius: 10px 10px 10px 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#conteudo_sobrenos #iatf{
+    width: 150px;
+    height: 150px;
+    align-items: initial;
+}
+#conteudo_produtos{
+    position: unset;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0px 0px 0px 10px;
+    background-color: rgb(230, 230, 230);
+
+}
+#conteudo_produtos hr{
+    width: 1170px;
+    justify-content: left;
+}
+
+#conteudo_produtos img{
+    border-radius: 10px 10px 10px 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#conteudo_melhoria{
+    position: unset;
+    width: 1200px;
+    margin: 0 auto;
+    background-color: rgb(230, 230, 230);
+
+}
+#conteudo_melhoria #kaizen{
+    width: 700px;
+    height: 400px;
+}
+#conteudo_melhoria #atuacao{
+    width: 100px;
+    height: 80px;
+}
+
+#conteudo_contatos{
+    position: unset;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0px 0px 0px 10px;
+    background-color: rgb(230, 230, 230);
+}
+#conteudo_contatos h2, h3, h6{
+    font-family: arial;
+    color: rgb(59, 59, 59);
+
+}
+
+#conteudo_contatos hr{
+    width: 1170px;
+    justify-content: left;
+}
+
+
+p{
+    font-family: arial;
+}
+footer{
+    width: 100%;
+    
+    text-align: center;
+}
+
+.formCad{
+    width: 1170px;
+    margin: 0 auto;
+
+
+}

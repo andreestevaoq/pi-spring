@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="/css/estilo.css">
+
+    
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css " rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-maskmoney/3.0.2/jquery.maskMoney.min.js"></script>
+
+    <title>Cadastro de Curriculo</title>
+</head>
+
+<body>
+
+    <div id="banner" class="bg-light">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="/"> <img src="/imagens/logo_stamp.png" alt="" srcset="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/sobre_nos">Sobre nós <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/produtos">Produtos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/clientes_e_fornecedores">Clientes e Fornecedores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/melhoria_continua">Melhoria Contínua</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contatos">Contatos</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                        <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <!--
+    <th:block th:include="mensagem-validacao"></th:block>
+    
+    <form name="formCad" id="formCad" class="formCad" method="post">
+        <table>
+            <tr>
+                <th colspan=2>
+                    <h3> Cadastro de Curriculo</h3>
+                </th>
+            </tr>
+            <tr>
+                <td><label for="nome">Nome:</label></td>
+                <td><input type="text" name="nome" id="nome" size="50" autocomplete="off" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="cpf">CPF:</label></td>
+                <td><input type="text" class="mascaraCpf" name="cpf" id="cpf" size="15" autocomplete="off" required>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" name="email" id="email" size="30" autocomplete="off" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="cel">Celular:</label></td>
+                <td><input type="text" name="cel" id="cel" size="15" autocomplete="off" class="celular" required></td>
+            </tr>
+
+            <tr>
+                <td><label for="nascimento">Data Nascimento:</label></td>
+                <td><input type="date" name="nascimento" id="nascimento" autocomplete="off" required></td>
+            </tr>
+
+
+            <tr>
+                <td><label for="sexo">Sexo:</label></td>
+                <td><input type="radio" name="sexo" id="sexo" value="M" checked>Masculino
+                    <input type="radio" name="sexo" id="sexo" value="F">Feminino
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="endereco">Endereço:</label></td>
+
+            </tr>
+            <tr>
+                <td><label for="CEP">CEP:</label></td>
+                <td><input type="text" name="cep" id="cep" value="" size="15" autocomplete="off"
+                        onblur="pesquisacep(this.value);" required></td>
+            </tr>
+            <tr>
+                <td><label for="Logradouro">Logradouro:</label></td>
+                <td><input type="text" name="logradouro" id="logradouro" size="40" autocomplete="off"></td>
+            </tr>
+            <tr>
+                <td><label for="numero">Número:</label></td>
+                <td><input type="text" name="numero" id="numero" size="7" autocomplete="off" required></td>
+            </tr>
+            <tr>
+                <td><label for="Complemento">Complemento:</label></td>
+                <td><input type="text" name="complemento" id="complemento" autocomplete="off"></td>
+            </tr>
+            <tr>
+                <td><label for="Bairro">Bairro:</label></td>
+                <td><input type="text" name="bairro" id="bairro" size="30" autocomplete="off"></td>
+            </tr>
+
+            <tr>
+                <td><label for="Cidade">Cidade:</label></td>
+                <td><input type="text" name="cidade" id="cidade" autocomplete="off"></td>
+            </tr>
+            <tr>
+                <td><label for="Estado">Estado:</label></td>
+                <td><input type="text" name="uf" id="uf" autocomplete="off"></td>
+            </tr>
+
+            <tr>
+                <td><label for="Competencias">Competências Profissionais:</label></td>
+                <td><textarea name="competencias" id="competencias" cols="70" rows="5"></textarea></td>
+            </tr>
+
+            <tr>
+                <td><label for="Competencias">Experiências Profissionais:</label></td>
+                <td><textarea name="experiencias" id="experiencias" cols="70" rows="5"></textarea></td>
+            </tr>
+
+            <tr>
+                <th>
+                    <button type="submit" class="btn btn-success">Adicionar Currículo</button>
+                </th>
+            </tr>
+             <tr>
+
+
+              
+                <th><input type="button" name="btnUpload" id="btnUpload" value="Enviar Curriculo"
+                        onclick="alert('Enviar Curriculo em PDF(Ainda não Implementado!)');">
+
+                </th> -->
+    <!--
+                <th><input type="submit" name="btnValida" id="btnValida" value="Validar Formulário"></th>
+                
+                <th><input type="submit" name="btnCadastrar" id="btnCadastrar" value="Cadastrar">
+                </th>
+            </tr>
+
+    </form>-->
+
+
+    <div class="container">
+        <h2>Lista de Cadastros</h2>
+    
+    <br>
+
+
+    <table class="table table-hover table-responsive w-auto table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nome:</th>
+                <th scope="col">CPF:</th>
+                <th scope="col">E-mail:</th>
+                <th scope="col">Celular:</th>
+                <th scope="col">Nascimento:</th>
+                <th scope="col">Sexo:</th>
+                <th scope="col">CEP:</th>
+                <th scope="col">Logradouro:</th>
+                <th scope="col">Numero:</th>
+                <th scope="col">Complemento:</th>
+                <th scope="col">Bairro:</th>
+                <th scope="col">Cidade:</th>
+                <th scope="col">Estado:</th>
+                <th scope="col">Competências:</th>
+                <th scope="col">Experiências:</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cadastro : ${cadastros}">
+                <td><a th:href="${(#mvc.url('CC#detalhesCadastro').arg(0, cadastro.id)).build()}"><span
+                            th:text="${cadastro.nome}"></span></a></td>
+                <td><span th:text="${cadastro.cpf}"></span></td>
+                <td><span th:text="${cadastro.email}"></span></td>
+                <td><span th:text="${cadastro.cel}"></span></td>
+                <td><span th:text="${cadastro.nascimento}"></span></td>
+                <td><span th:text="${cadastro.sexo}"></span></td>
+                <td><span th:text="${cadastro.cep}"></span></td>
+                <td><span th:text="${cadastro.logradouro}"></span></td>
+                <td><span th:text="${cadastro.numero}"></span></td>
+                <td><span th:text="${cadastro.complemento}"></span></td>
+                <td><span th:text="${cadastro.bairro}"></span></td>
+                <td><span th:text="${cadastro.cidade}"></span></td>
+                <td><span th:text="${cadastro.uf}"></span></td>
+                <td><span th:text="${cadastro.competencias}"></span></td>
+                <td><span th:text="${cadastro.experiencias}"></span></td>
+
+
+                <td><a th:href="${(#mvc.url('CC#deletarCadastro').arg(0, cadastro.id)).build()}"
+                        class="waves-effect waves-light btn-small"><button type="button"
+                            class="btn btn-danger">Excluir</button></a></td>
+                  <td><a 
+                    th:href="${(#mvc.url('CC#editarCadastro').arg(0, cadastro.id)).build()}"><button 
+                    type="button" class="btn btn-primary">Editar</button></a></td> 
+
+
+
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" onclick="location.href='/form_cadastro'">Voltar</button>
+
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+
+        </script>
+
+    <script src="/javascript/valida_form.js"></script>
+</body>
+
+</html>
